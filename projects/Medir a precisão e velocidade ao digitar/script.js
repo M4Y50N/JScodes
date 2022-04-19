@@ -7,10 +7,22 @@ const theTimer = document.querySelector(".timer");
 let timer = [0, 0, 0, 0];
 
 // Adiciona zero inicial aos números <= 9 (apenas para estética):
+function leadingZero(time) {
+	if (time <= 9) {
+		time = "0" + time;
+	}
+
+	return time;
+}
 
 // Executa um timer padrão de minuto / segundo / centésimos:
 function runTimer() {
-	let currentTime = timer[0] + ":" + timer[1] + ":" + timer[2];
+	let currentTime =
+		leadingZero(timer[0]) +
+		":" +
+		leadingZero(timer[1]) +
+		":" +
+		leadingZero(timer[2]);
 	theTimer.innerHTML = currentTime;
 	timer[3]++;
 
