@@ -1,7 +1,7 @@
 const PONTEIROHORA = document.querySelector("#hour");
 const PONTEIROMINUTO = document.querySelector("#minute");
 const PONTEIROSEGUNDO = document.querySelector("#second");
-
+//dasdas
 function movePoint() {
 	var data = new Date();
 
