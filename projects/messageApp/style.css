@@ -68,3 +68,12 @@ input[type=button]:hover{
     background-color: rgb(14, 197, 197);
 }
 
+/* Classe hidden */
+.hidden{
+    display: none;
+}
+
+.user-error{
+    color: white;
+    background-color: rgb(192, 60, 60);
+}
