@@ -14,7 +14,7 @@ function enviarMsg() {
 function yUser() {
 	let user = document.getElementById("user");
 	if (user.value) {
-		window.location.assign("./chat.html");
+		window.location.assign("./assets/html/chat.html");
 		document.querySelector(".user-error").classList.add("hidden");
 	} else {
 		document.querySelector(".user-error").classList.remove("hidden");
