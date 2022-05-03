@@ -15,10 +15,9 @@ app.get("/", (req, res) => {
 		if (err) {
 			throw err;
 		} else {
-			console.log(data.toString());
+			res.send(data.toString());
 		}
 	});
-	res.send("Arquivo na tela!");
 });
 
 app.listen(PORT, () => {
