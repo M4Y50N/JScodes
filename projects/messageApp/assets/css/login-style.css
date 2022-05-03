@@ -77,3 +77,18 @@ input[type=button]:hover{
     color: white;
     background-color: rgb(192, 60, 60);
 }
+
+/* //responsivo */
+@media screen and (max-width: 500px){
+   .caixa{ 
+        width: 300px;
+        height: 200px;
+        padding: 25px;
+    }
+    h2{
+        font-size: 1.5em;
+    } 
+    input{
+        font-size: 0.7em;    
+    }
+}

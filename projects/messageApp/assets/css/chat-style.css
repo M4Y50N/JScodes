@@ -87,7 +87,6 @@ input{
 
 input[type=text]{
     font-weight: bold;
-
 }
 
 input[type= button]{
@@ -113,3 +112,28 @@ input[type=button]:hover{
     box-shadow: 1px 2px 3px rgb(0, 0, 0);
 }
 
+@media screen and  (max-width: 500px){
+    .container{
+        padding: 20px;
+        height: 100vh;
+    }
+
+    #msg{
+        padding: 20px 25px;
+    }
+
+    #msg p{
+        font-size: 0.8em;
+    }
+
+    input{
+        font-size: 0.8em;   
+    }
+
+    #inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+    
+}

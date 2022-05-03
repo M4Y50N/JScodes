@@ -1,13 +1,14 @@
 const fs = require("fs"),
 	http = require("http"),
 	express = require("express"),
-	bodyParser = require("body-parser"),
 	path = require("path");
 
+const apiRoute = require("./assets/routes/api");
 const app = express();
 
 const PORT = 2323;
 
+app.use("/api", apiRoute);
 app.use("/", express.static(path.join(__dirname, "assets")));
 
 app.get("/", (req, res) => {
