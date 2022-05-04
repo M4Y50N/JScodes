@@ -5,17 +5,10 @@ function yUser() {
 	valUser(user);
 }
 
-//Validar user e atualizar tela
+//Validar user
 function valUser(user) {
 	if (user.value) {
-		document.body.innerHTML = `<div class="container">
-										<div id="msg ${user.value}" ></div>
-										<div id="inputs">
-												<input id="texto" type="text" placeholder="Digite sua mensagem" />
-												<input type="button" value="Enviar" onclick="newMsg()" />
-										</div>
-									</div>
-									<script src="../js/features.js"></script>`;
+		window.location.href = "../html/chat.html";
 
 		document.querySelector(".user-error").classList.add("hidden");
 	} else {

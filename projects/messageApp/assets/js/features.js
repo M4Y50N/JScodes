@@ -8,7 +8,6 @@ function updateMsg() {
 			return res.json();
 		})
 		.then((json) => {
-			console.log(json);
 			let msgElements = "";
 
 			let msg = JSON.parse(json);
