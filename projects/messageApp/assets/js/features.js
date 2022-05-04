@@ -1,22 +1,5 @@
-//Guardar User
-function yUser() {
-	let user = document.getElementById("user");
-	// validar usuario
-	valUser(user);
-}
-
-//Validar user
-function valUser(user) {
-	if (user.value) {
-		window.location.assign("../html/chat.html");
-		document.querySelector(".user-error").classList.add("hidden");
-	} else {
-		document.querySelector(".user-error").classList.remove("hidden");
-	}
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-	updateMsg();
+	setInterval(updateMsg(), 1000);
 });
 //mostrar msg no site
 function updateMsg() {
@@ -25,20 +8,15 @@ function updateMsg() {
 			return res.json();
 		})
 		.then((json) => {
+			console.log(json);
 			let msgElements = "";
 
 			let msg = JSON.parse(json);
 			msg.forEach((m) => {
 				let mElement = `<p><span style="color: #ff3739; font-size: .8em; font-weight: bold; text-transform: uppercase;">${m.name}</span> <br> ${m.msg}</p>`;
-
 				msgElements += mElement;
 			});
 			document.getElementById("msg").innerHTML = msgElements;
-			document.getElementById("texto").focus();
-			document.getElementById("texto").value = "";
-			document
-				.getElementById("msg")
-				.scroll(0, document.getElementById("msg").scrollHeight);
 		});
 }
 
@@ -56,6 +34,10 @@ function newMsg() {
 	};
 
 	fetch("http://192.168.0.100:2323/api/new", options).then((res) => {
-		updateMsg();
+		document.getElementById("texto").focus();
+		document.getElementById("texto").value = "";
+		document
+			.getElementById("msg")
+			.scroll(0, document.getElementById("msg").scrollHeight);
 	});
 }

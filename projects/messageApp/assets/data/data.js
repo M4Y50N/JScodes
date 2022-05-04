@@ -5,7 +5,7 @@ module.exports = {
 		return this.data;
 	},
 	newData(name, msg) {
-		this.data.push({ id: generateID(), name, msg });
+		this.data.push({ name, msg });
 	},
 };
 
