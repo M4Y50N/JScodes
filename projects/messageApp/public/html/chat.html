@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/chat-style.css" />
+		<title>Bem vindo ao chat!</title>
+	</head>
+	<body>
+		<div class="container">
+			<main class="chat-main">
+				<div class="side-bar">
+					<h2>Users</h2>
+					<div class="user-container">
+						<p>Mayson</p>
+						<p>Petherson</p>
+						<p>Miguel, O gordo</p>
+					</div>
+				</div>
+				<div class="chat-messages">
+					<div class="message">
+						<p class="meta">Mayson <span>10:13pm</span></p>
+						<p class="text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+							repudiandae. asdasdasasdas dasdasdasdsadas dasdasdas
+						</p>
+					</div>
+					<div class="message">
+						<p class="meta">Mayson <span>10:14pm</span></p>
+						<p class="text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+							repudiandae.
+						</p>
+					</div>
+				</div>
+			</main>
+			<div class="chat-form-container">
+				<form id="chat-form">
+					<input
+						type="text"
+						id="message-area"
+						placeholder="Digite uma mensagem..."
+						required
+						autocomplete="off"
+					/>
+					<input type="button" value="Enviar" />
+				</form>
+			</div>
+		</div>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="../js/main.js"></script>
+	</body>
+</html>
