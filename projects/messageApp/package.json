@@ -1,0 +1,11 @@
+{
+  "name": "messageapp",
+  "version": "1.0.0",
+  "description": "Chat Online",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "M4Y50N",
+  "license": "ISC"
+}
