@@ -12,8 +12,8 @@ const userList = document.querySelector(".user-container");
 socket.emit("joinUser", username);
 
 //Get users
-socket.on("roomUsers", (user) => {
-	outputUsers(user);
+socket.on("roomUsers", (users) => {
+	outputUsers(users);
 });
 
 //message from server
@@ -46,9 +46,14 @@ function outputMessage(message) {
     </p>
 `;
 	document.querySelector(".chat-messages").appendChild(div);
+	document.querySelector("#message_area").value = "";
+	document.querySelector("#message_area").focus();
 }
 
 //Username to DOM
-function outputUsers(user) {
-	userList.innerHTML += `<p>${user.username}</p>`;
+function outputUsers(users) {
+	userList.innerHTML = "";
+	users.forEach((user) => {
+		userList.innerHTML += `<p>${user.username}</p>`;
+	});
 }

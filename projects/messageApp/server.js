@@ -3,7 +3,12 @@ const http = require("http");
 const express = require("express");
 
 const formatMessage = require("./utils/message_data");
-const { userJoin, getCurrentUser, userLeave } = require("./utils/users");
+const {
+	userJoin,
+	getCurrentUser,
+	userLeave,
+	getAllUsers,
+} = require("./utils/users");
 
 const socketio = require("socket.io");
 
@@ -11,7 +16,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+const cors = require("cors");
+
 const PORT = 2323 || process.env.PORT;
+
+//Use cors
+app.use(cors());
 
 //Use statics folders
 app.use(express.static(path.join(__dirname, "public")));
@@ -41,14 +51,13 @@ io.on("connection", (socket) => {
 		);
 
 		//Send users info
-		io.emit("roomUsers", user);
+		io.emit("roomUsers", getAllUsers());
 	});
 
 	//Listen if a user send a message
 	socket.on("chatMessage", (msg) => {
 		const user = getCurrentUser(socket.id);
 
-		console.log(user);
 		io.emit("message", formatMessage(user.username, msg));
 	});
 

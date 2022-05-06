@@ -169,3 +169,68 @@ body, html{
     background-color: black;
 }
 
+
+@media screen and (max-width: 393px) {
+    
+    .container{
+        width: auto;
+        margin: 0px auto; 
+      
+        border-radius: 0px;
+       
+    }
+    
+    .side-bar{
+        width: 100px;
+        max-width: 100px;
+    
+    }
+    
+  
+
+    .user-container{
+        padding: 3px;
+    }
+    
+    
+    .chat-main{
+        padding: 50px 0px 20px 0px;
+        flex: 1;
+        display: flex;
+    }
+    
+    .chat-messages{
+        width: 100vw;
+        height: calc(100vh - 290px);
+        padding: 10px;
+         border-radius: 0px;
+     
+    }
+    
+
+    .chat-form-container{
+        padding: 0px 0px 30px;
+    }
+    
+    #chat-form{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10px;
+    }
+    
+    #chat-form input:first-child{
+        
+      
+        margin-bottom: 10px;
+        padding: 25px 20px;
+      
+    }
+    
+    #chat-form .btn{
+
+            padding: 15px 20px;    
+              
+    }
+    
+    
+}

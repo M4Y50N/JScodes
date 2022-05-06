@@ -25,8 +25,14 @@ function userLeave(id) {
 	}
 }
 
+//Get All Users
+function getAllUsers() {
+	return users;
+}
+
 module.exports = {
 	userJoin,
 	getCurrentUser,
 	userLeave,
+	getAllUsers,
 };
