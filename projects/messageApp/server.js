@@ -2,9 +2,10 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 
+const formatMessage = require("./utils/message_data");
+const { userJoin, getCurrentUser, userLeave } = require("./utils/users");
+
 const socketio = require("socket.io");
-const { render } = require("express/lib/response");
-const res = require("express/lib/response");
 
 const app = express();
 const server = http.createServer(app);
@@ -23,20 +24,49 @@ app.use("/", (req, res) => {
 	res.render("./html/login.html");
 });
 
+const BigBot = "BigBot";
+
 //User connects
 io.on("connection", (socket) => {
-	//Envia ao usuario atual
-	socket.emit("message", "Bem vindo ao Chat!");
+	socket.on("joinUser", (username) => {
+		const user = userJoin(socket.id, username);
 
-	//Broadcast when user connects
-	socket.broadcast.emit("message", "Um usuário entrou no chat!");
+		//Envia ao usuario atual
+		socket.emit("message", formatMessage(BigBot, "Bem vindo ao Chat!"));
+
+		//Broadcast when user connects
+		socket.broadcast.emit(
+			"message",
+			formatMessage(BigBot, `${user.username} entrou no chat!`)
+		);
+
+		//Send users info
+		io.emit("roomUsers", user);
+	});
+
+	//Listen if a user send a message
+	socket.on("chatMessage", (msg) => {
+		const user = getCurrentUser(socket.id);
+
+		console.log(user);
+		io.emit("message", formatMessage(user.username, msg));
+	});
 
 	//user disconnects
 	socket.on("disconnect", () => {
-		io.emit("message", "Um usuário deixou o chat!");
-	});
+		const user = userLeave(socket.id);
+		if (user) {
+			io.emit(
+				"message",
+				formatMessage(BigBot, `${user.username} deixou o chat!`)
+			);
 
-	socket.on("ChatMessage", () => {});
+			//Send users info
+			io.emit("RoomUsers", () => {
+				users: getCurrentUser(user.username);
+			});
+		}
+	});
 });
 
 server.listen(PORT, () => {
