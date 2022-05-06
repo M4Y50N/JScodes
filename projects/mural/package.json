@@ -1,0 +1,22 @@
+{
+	"name": "mural",
+	"version": "1.0.0",
+	"description": "mural de posts",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server",
+		"dev": "nodemon server"
+	},
+	"author": "M4Y50N",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"ejs": "^3.1.7",
+		"express": "^4.18.1",
+		"moment": "^2.29.3",
+		"socket.io": "^4.5.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	}
+}

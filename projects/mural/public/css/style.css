@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main{
+    padding: 50px;
+}
+
+#form-post{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input{
+    margin: 10px 0px;
+    padding: 10px 15px;
+}
+
+textarea{
+    padding: 7px 15px;
+}
+
+input, textarea{
+    outline: none;
+}
+
+input[type='button']{
+    background-color: aliceblue;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type='button']:hover{
+    cursor: pointer;
+    background-color: rgb(191, 221, 248);
+}
+
+#mural-posts{
+    margin-top: 20px;
+}
+
+#mural-posts:nth-child(3n - 2){
+    background-color: black;
+}
+
+.post p{
+    width: 70ch;
+}
