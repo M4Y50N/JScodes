@@ -28,6 +28,14 @@ io.on("connection", (socket) => {
 	console.log("New ws connection");
 
 	socket.emit("message", "Bem vindo ao Chat!");
+
+	//Broadcast when user connects
+	socket.broadcast.emit("message", "Um usuário entrou no chat!");
+
+	//user disconnects
+	socket.on("disconnect", () => {
+		io.emit("message", "Um usuário deixou o chat!");
+	});
 });
 
 server.listen(PORT, () => {
