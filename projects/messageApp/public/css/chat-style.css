@@ -140,7 +140,7 @@ body, html{
     box-shadow: 1px  1px 5px rgba(0, 0, 0, 0.541);
 }
 
-#chat-form input[type="button"]{
+#chat-form .btn{
   
 
         padding: 15px 20px;    
@@ -156,14 +156,14 @@ body, html{
         transition: all 0.2s ease-in-out;    
 }
 
-#chat-form input[type="button"]:hover{
+#chat-form .btn:hover{
         cursor: pointer;
     
         background-image: linear-gradient(0.50turn, rgba(2, 57, 65, 0.589),  rgb(3, 133, 150));
                 
 }
 
-#chat-form input[type="button"]:active{
+#chat-form .btn:active{
     background-color: black;
 }
 

@@ -25,8 +25,7 @@ app.use("/", (req, res) => {
 
 //User connects
 io.on("connection", (socket) => {
-	console.log("New ws connection");
-
+	//Envia ao usuario atual
 	socket.emit("message", "Bem vindo ao Chat!");
 
 	//Broadcast when user connects
@@ -36,6 +35,9 @@ io.on("connection", (socket) => {
 	socket.on("disconnect", () => {
 		io.emit("message", "Um usuário deixou o chat!");
 	});
+
+	console.log(socket);
+	socket.on("ChatMessage", () => {});
 });
 
 server.listen(PORT, () => {
