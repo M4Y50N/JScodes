@@ -25,9 +25,11 @@ app.use("/", (req, res) => {
 
 //User connects
 io.on("connection", (socket) => {
-	console.log("New ws connection");
-
+	//Envia ao usuario atual
 	socket.emit("message", "Bem vindo ao Chat!");
+
+	console.log(socket);
+	socket.on("ChatMessage", () => {});
 });
 
 server.listen(PORT, () => {
