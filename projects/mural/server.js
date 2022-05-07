@@ -12,6 +12,11 @@ const PORT = 3000 || process.env.PORT;
 
 const posts = require("./data/posts");
 
+const cors = require("cors");
+
+//user cors
+app.use(cors());
+
 //Usar arquivos staticos
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -19,8 +24,9 @@ app.use(express.static(path.join(__dirname, "public")));
 io.on("connection", (socket) => {
 	socket.on("newPost", (post) => {
 		posts.push(post);
-		console.log(posts);
 	});
+
+	socket.emit("update", posts);
 });
 
 server.listen(PORT, () => {
