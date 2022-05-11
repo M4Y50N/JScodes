@@ -25,9 +25,9 @@ io.on("connection", (socket) => {
 	socket.on("newPost", (post) => {
 		posts.push(post);
 	});
-
-	socket.emit("update", posts);
 });
+
+io.emit("update", posts);
 
 server.listen(PORT, () => {
 	console.log("Server rodando na porta ", PORT);
