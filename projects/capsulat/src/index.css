@@ -21,3 +21,11 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: inherit;
+}
