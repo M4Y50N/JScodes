@@ -1,3 +1,3 @@
-import Sec from "./Sec/Sec";
+import Header from "./Header/Header";
 
-export { Sec };
+export { Header };

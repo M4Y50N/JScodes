@@ -10,15 +10,6 @@ const Navbar = () => (
 		</div>
 		<ul className="app__navbar-links">
 			<li className="p__opensans">
-				<a href="#home">Home</a>
-			</li>
-			<li className="p__opensans">
-				<a href="#about">About</a>
-			</li>
-			<li className="p__opensans">
-				<a href="#turmas">Turmas</a>
-			</li>
-			<li className="p__opensans">
 				<a href="#login">Login</a>
 			</li>
 			<li className="p__opensans">

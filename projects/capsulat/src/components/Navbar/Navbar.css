@@ -1,5 +1,5 @@
 .app__navbar{
-    padding: 15px 20px;
+    padding: 15px 100px;
 
     width: 100%;
     
@@ -24,6 +24,7 @@
 .app__navbar-links{
     display: flex;
 
+    justify-content: flex-end;
     list-style: none;
 }
 

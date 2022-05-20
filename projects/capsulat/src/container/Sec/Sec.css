@@ -1,9 +1,0 @@
-.app__main{
-    width: fit-content;
-    margin: 50px auto;
-}
-
-#app__main-form input[type="text"]{
-    height: 50px;
-    padding: 5px 10px;
-}
