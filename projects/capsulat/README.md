@@ -1,1 +1,0 @@
-# Projeto de capsula do tempo virtual
